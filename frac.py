@@ -88,9 +88,9 @@ def main():
 	p1 = Point(0,0)
 	p2 = Point(100,0)
 	p3 = Point(50,50*math.sqrt(3))
-	l1 = Line(p1,p2)
-	l2 = Line(p2,p3)
-	l3 = Line(p3,p1)
+	l1 = Line(p1,p3)
+	l2 = Line(p3,p2)
+	l3 = Line(p2,p1)
 	prev = [l1,l2,l3]
 	for i in range (0,5):
 		prev = iteration(prev)
