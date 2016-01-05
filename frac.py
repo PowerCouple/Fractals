@@ -47,7 +47,7 @@ def iteration(line_arr):
 		arr.add(Line(p2,p3))
 		arr.add(Line(p3,end_point))
 
-	drawLines(arr)
+	draw_lines(arr)
 
 	return arr
 
