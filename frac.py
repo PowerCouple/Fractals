@@ -47,8 +47,6 @@ def iteration(line_arr):
 		arr.append(Line(p2,p3))
 		arr.append(Line(p3,end_point))
 
-	drawLines(arr)
-
 	return arr
 
 
@@ -90,6 +88,8 @@ def main():
 	prev = [l1,l2,l3]
 	for i in range (0,5):
 		prev = iteration(prev)
+
+	drawLines(prev)
 
 
 if __name__ == "__main__":
