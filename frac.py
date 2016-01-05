@@ -1,8 +1,6 @@
 import turtle
 import math
 
-
-
 class Line:
 	def __init__(self, my_start, my_end):
 		self.start = my_start
@@ -39,7 +37,6 @@ def iteration(line_arr):
 	arr = []
 	for line in line_arr:
 		p = getPoint(line)
-	print "iteration"
 
 def getPoint(line):
 	sx = line.start.x
@@ -74,19 +71,12 @@ def getPoint(line):
 
 def main():
 	turtle.shape("blank")
-	#number of times you want the image to iterate
-	it = 5
-	num = 100
 	p1 = Point(0,0)
-	p2 = Point(0,num)
-	p3 = Point(num,num)
-	p4 = Point(num,0)
-	l1 = Line(p1,p2)
-	l2 = Line(p2,p3)
-	l3 = Line(p3,p4)
-	l4 = Line(p4,p1)
-	line_arr = [l1,l2,l3,l4]
-	draw_lines(line_arr)
+	p2 = Point(0,0)
+	p3 = Point(0,0)
+	prev = []
+	for i in range (0,5):
+		prev = iteration(prev)
 
 
 if __name__ == "__main__":
