@@ -24,7 +24,7 @@ def draw_single_line(line,turt):
 	turt.down()
 	turt.setpos(line.end.x, line.end.y)
 	
-def draw_lines(line_arr):
+def drawLines(line_arr):
 	turt = turtle.Turtle()
 	turtle.shape("blank")
 	#draws each line in the line_arr
@@ -51,7 +51,6 @@ def iteration(line_arr):
 
 	return arr
 
-	print "iteration"
 
 def getPoint(line):
 	sx = line.start.x
@@ -86,9 +85,9 @@ def getPoint(line):
 
 def main():
 	turtle.shape("blank")
-	p1 = Point(0,10)
-	p2 = Point(10,10)
-	p3 = Point(10,0)
+	p1 = Point(0,0)
+	p2 = Point(100,0)
+	p3 = Point(50,50*math.sqrt(3))
 	prev = []
 	for i in range (0,5):
 		prev = iteration(prev)
