@@ -71,9 +71,9 @@ def getPoint(line):
 
 def main():
 	turtle.shape("blank")
-	p1 = Point(0,0)
-	p2 = Point(0,0)
-	p3 = Point(0,0)
+	p1 = Point(0,10)
+	p2 = Point(10,10)
+	p3 = Point(10,0)
 	prev = []
 	for i in range (0,5):
 		prev = iteration(prev)
