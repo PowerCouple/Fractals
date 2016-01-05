@@ -36,7 +36,22 @@ def iteration(line_arr):
 	#does the next iteration of the fractal
 	arr = []
 	for line in line_arr:
-		p = getPoint(line)
+		start_point = line.start
+		end_point = line.end
+		p1 = Point((2*start_point.x+end_point.x)/3.,(2*start_point.y+end_point.y)/3.)
+		p2 = getPoint(line)
+		p3 = Point((start_point.x+2*end_point.x)/3.,(start_point.y+2*end_point.y)/3.)
+
+		arr.add(Line(start_point,p1))
+		arr.add(Line(p1,p2))
+		arr.add(Line(p2,p3))
+		arr.add(Line(p3,end_point))
+
+	drawLines(arr)
+
+	return arr
+
+	print "iteration"
 
 def getPoint(line):
 	sx = line.start.x
