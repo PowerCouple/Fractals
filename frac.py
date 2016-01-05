@@ -47,7 +47,7 @@ def iteration(line_arr):
 		arr.append(Line(p2,p3))
 		arr.append(Line(p3,end_point))
 
-	draw_lines(arr)
+	drawLines(arr)
 
 	return arr
 
@@ -71,13 +71,9 @@ def getPoint(line):
 			theta += math.pi
 
 	length = math.sqrt((sx-fx)**2+(sy-fy)**2)
-	print length
-	print theta
 
 	x = 1./2
 	y  = 1./(2*math.sqrt(3))
-
-	print length*(x*math.cos(theta)-y*math.sin(theta))+sx
 
 	return Point(length*(x*math.cos(theta)-y*math.sin(theta))+sx,length*(x*math.sin(theta)+y*math.cos(theta))+sy)
 
