@@ -1,4 +1,7 @@
 import turtle
+import math
+
+
 
 class Line:
 	def __init__(self, my_start, my_end):
@@ -18,7 +21,41 @@ class Point:
 	
 def iteration(line_arr):
 	#does the next iteration of the fractal
+	arr = []
+	for line in line_arr:
+		p = getPoint(line)
 	print "iteration"
+
+def getPoint(line):
+	sx = line.start.x
+	sy = line.start.y
+	fx = line.end.x
+	fy = line.end.y
+
+	if (fx==sx):
+		if (fy==sy):
+			print "error"
+		elif (fy < sy):
+			theta = -math.pi/2
+		else:
+			theta = math.pi/2
+	else:
+		theta = math.atan((fy-sy)/(fx-sx))
+		if (fx < sx):
+			theta += math.pi
+
+	length = math.sqrt((sx-fx)**2+(sy-fy)**2)
+	print length
+	print theta
+
+	x = 1./2
+	y  = 1./(2*math.sqrt(3))
+
+	print length*(x*math.cos(theta)-y*math.sin(theta))+sx
+
+	return Point(length*(x*math.cos(theta)-y*math.sin(theta))+sx,length*(x*math.sin(theta)+y*math.cos(theta))+sy)
+
+
 
 def main():
 	print "hello"
@@ -33,3 +70,8 @@ def main():
 
 if __name__ == "__main__":
 	main()
+
+
+s = Point(0,0)
+f = Point(1,0)
+l = Line(s,f)
