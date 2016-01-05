@@ -42,10 +42,10 @@ def iteration(line_arr):
 		p2 = getPoint(line)
 		p3 = Point((start_point.x+2*end_point.x)/3.,(start_point.y+2*end_point.y)/3.)
 
-		arr.add(Line(start_point,p1))
-		arr.add(Line(p1,p2))
-		arr.add(Line(p2,p3))
-		arr.add(Line(p3,end_point))
+		arr.append(Line(start_point,p1))
+		arr.append(Line(p1,p2))
+		arr.append(Line(p2,p3))
+		arr.append(Line(p3,end_point))
 
 	draw_lines(arr)
 
